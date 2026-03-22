@@ -1,11 +1,19 @@
 package com.tienda.catalogo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity // JPA: Crea una BBDD para esta clase
 public class Producto {
 
     private Long id;
     private String nombre;
     private Double precio;
 
+    @Id // JPA: Este es el identificador único (Primary Key) de cada producto
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 3. Hace que el ID se genere automáticamente (1, 2, 3...)
     public Long getId() {
         return id;
     }
