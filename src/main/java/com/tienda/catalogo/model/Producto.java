@@ -11,6 +11,7 @@ public class Producto {
     private Long id;
     private String nombre;
     private Double precio;
+    private Integer stock;
 
     @Id // JPA: Este es el identificador único (Primary Key) de cada producto
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 3. Hace que el ID se genere automáticamente (1, 2, 3...)
@@ -36,5 +37,13 @@ public class Producto {
 
     public void setPrecio(Double precio) {
         this.precio = precio;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
     }
 }
